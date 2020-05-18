@@ -1,0 +1,9 @@
+export { default as Technology } from "./Technology";
+export { default as Business } from "./Business";
+export { default as Sports } from "./Sports";
+export { default as WallStreetJournal } from "./WallStreetJournal";
+export { default as Bitcoin } from "./Bitcoin";
+export { default as NasaMarsImages } from "./NasaMarsImages";
+export { default as AboutUs } from "./AboutUs";
+export { default as ContactUs } from "./ContactUs";
+export { default as Feedback } from "./Feedback";

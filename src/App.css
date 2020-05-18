@@ -1,38 +1,100 @@
 .App {
+  width: 100%;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  margin: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 40%;
+  border: 1px solid rgba(170, 170, 170, 0.26);
+  border-radius: 5px;
+  box-shadow: 2px 3px rgba(170, 170, 170, 0.521);
+  padding: 5px;
+  margin: 10px;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container:hover {
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.heading > h1 {
+  text-align: center;
+  color: tomato;
+  font-weight: 700;
+  font-family: sans-serif;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.heading {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coverimg > img {
+  width: 500px;
+  height: 250px;
+}
+
+.description {
+  box-sizing: border-box;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description:hover {
+  color: rgba(255, 0, 0, 0.548);
+  text-decoration: underline;
+}
+
+.footer {
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.705);
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgb(199, 198, 198);
+  text-transform: uppercase;
+}
+
+.tabColumn > h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.555);
+}
+
+.tabColumn > p {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tabColumn > p:hover {
+  cursor: pointer;
+}
+
+.copyright {
+  text-align: center;
+  background-color: lightgrey;
+}
+
+.copyright > p {
+  margin: 0;
+  padding: 5px;
 }
