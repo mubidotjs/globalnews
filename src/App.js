@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { Navbar, Main, Footer } from "./components";
 import { Route, Switch } from "react-router-dom";
-import axios from "axios";
 import {
   Technology,
   Business,
@@ -41,41 +40,86 @@ class App extends React.Component {
     };
   }
 
+  fetchGlobal = () => {
+    fetch(api_global)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          globalNews: result.articles,
+        })
+      );
+  };
+
+  fetchTech = () => {
+    fetch(api_tech)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          techNews: result.articles,
+        })
+      );
+  };
+
+  fetchBusiness = () => {
+    fetch(api_business)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          businessNews: result.articles,
+        })
+      );
+  };
+
+  fetchSports = () => {
+    fetch(api_sports)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          sportsNews: result.articles,
+        })
+      );
+  };
+
+  fetchWallStreetJournal = () => {
+    fetch(api_wallStreetJournal)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          wsjNews: result.articles,
+        })
+      );
+  };
+
+  fetchBitcoin = () => {
+    fetch(api_bitcoin)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          bitcoinNews: result.articles,
+        })
+      );
+  };
+
+  fetchMarsImages = () => {
+    fetch(api_nasaMarsImages)
+      .then((response) => response.json())
+      .then((result) =>
+        this.setState({
+          nasaImages: result.photos,
+        })
+      );
+  };
+
   componentDidMount() {
-    axios
-      .all([
-        axios.get(api_global),
-        axios.get(api_tech),
-        axios.get(api_business),
-        axios.get(api_sports),
-        axios.get(api_wallStreetJournal),
-        axios.get(api_bitcoin),
-        axios.get(api_nasaMarsImages),
-      ])
-      .then(
-        axios.spread(
-          (
-            global,
-            tech,
-            business,
-            sports,
-            wallStreetJournal,
-            bitcoin,
-            nasaImg
-          ) => {
-            this.setState({
-              globalNews: global.data.articles,
-              techNews: tech.data.articles,
-              businessNews: business.data.articles,
-              sportsNews: sports.data.articles,
-              wsjNews: wallStreetJournal.data.articles,
-              bitcoinNews: bitcoin.data.articles,
-              nasaImages: nasaImg.data.photos,
-            });
-          }
-        )
-      )
-      .catch((err) => console.error(err));
+    Promise.all([
+      this.fetchGlobal(),
+      this.fetchTech(),
+      this.fetchBusiness(),
+      this.fetchSports(),
+      this.fetchWallStreetJournal(),
+      this.fetchBitcoin(),
+      this.fetchMarsImages(),
+    ]).then((values) => console.log(values));
   }
 
   showMenu = (event) => {
