@@ -28,7 +28,7 @@ const NasaMarsImages = ({ nasaImages, search }) => {
   return (
     <div className="main">
       <div className="heading">
-        <h1>Nasa's Mars Image Gallery</h1>
+        <h1>Nasa's Mars Photos Gallery</h1>
       </div>
       <Grid container>
         {searchNews ? (
